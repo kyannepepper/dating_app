@@ -1,0 +1,125 @@
+{% extends "base.html" %} {% block head %} {{ super() }}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='games/css/blackjack.css') }}"
+  type="text/css"
+/>
+
+{% endblock %} {% block content %}
+
+<div
+  class="absolute top-2 left-0 text-white text-2xl hidden hover:cursor-pointer"
+  id="bet-display"
+>
+  Bet: 0
+</div>
+
+<!-- Modal Popup for Blackjack Rules & Tips -->
+<div id="rulesModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Blackjack Rules & Tips</h1>
+    <p>Welcome to Blackjack! Here are some basic rules and tips:</p>
+    <ul>
+      <li>
+        The goal of Blackjack is to acquire a hand as close to 21 as possible,
+        beating the dealer in the process.
+      </li>
+      <li>
+        When the game gets underway, you are dealt two cards. You need to decide
+        whether to stand (stick with the cards that you have been dealt) or hit
+        (receive another card from the dealer).
+      </li>
+      <li>
+        You can stand with anything that is 21 or under, but be careful – stand
+        with a hand that is too low and the dealer is likely to beat you to 21.
+      </li>
+      <li>
+        If you decide to hit, you will receive another card from the dealer. Be
+        careful though, if you take a risk and hit with a hand that is close to
+        21 already, you might go bust. Working out when to hit and when to stand
+        is crucial to your Blackjack strategy and will help you win more hands
+        than you lose at the table.
+      </li>
+      <li>
+        While it’s tempting to go for 21 every time, standing with a hand of 17
+        or better can be a smart move as it keeps you in the game.
+      </li>
+      <li>***The dealer must hit until reaching at least 17.***</li>
+    </ul>
+  </div>
+</div>
+
+<div id="betModal" class="modal closed">
+  <div class="modal-content">
+    <h1>Bet</h1>
+    <p>Place your bet</p>
+    <p>Regular wins are paid out 1:1</p>
+    <p>Blackjack wins are paid out 3:2</p>
+    <input
+      type="number"
+      id="betInput"
+      min="1"
+      max="{{ user.points }}"
+      value="1"
+    />
+    <button id="placeBetButton">Place Bet</button>
+  </div>
+</div>
+
+<div id="blackjack-container" class="container mx-auto py-8">
+  <h1 class="text-3xl font-bold mb-4 text-center">Blackjack</h1>
+
+  <!-- Game Table -->
+  <div id="game-table" class="mb-6">
+    <div id="dealer-hand" class="hand-section mb-4">
+      <h2 class="text-xl font-semibold mb-2">Dealer's Hand</h2>
+      <div class="hand flex justify-center gap-4 p-4 bg-gray-700 rounded">
+        <!-- Dealer card images go here -->
+      </div>
+    </div>
+    <div id="player-hand" class="hand-section">
+      <h2 class="text-xl font-semibold mb-2">Your Hand</h2>
+      <div class="hand flex justify-center gap-4 p-4 bg-gray-700 rounded">
+        <!-- Player card images go here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Controls -->
+  <div id="game-controls" class="flex justify-center gap-4">
+    <button
+      id="deal-button"
+      type="button"
+      class="px-4 py-2 bg-green-600 text-white rounded"
+    >
+      Deal
+    </button>
+    <button
+      id="hit-button"
+      type="button"
+      class="px-4 py-2 bg-blue-600 text-white rounded"
+    >
+      Hit
+    </button>
+    <button
+      id="stand-button"
+      type="button"
+      class="px-4 py-2 bg-red-600 text-white rounded"
+    >
+      Stand
+    </button>
+  </div>
+</div>
+
+<!-- Link to your blackjack JS -->
+<script>
+  var CARD_BASE_PATH =
+    "{{ url_for('static', filename='games/images/cards/') }}";
+  var CARD_PLACEHOLDER =
+    "{{ url_for('static', filename='games/images/cards/BACK.png') }}";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+<script src="{{ url_for('static', filename='games/js/blackjack.js') }}"></script>
+{% endblock %}

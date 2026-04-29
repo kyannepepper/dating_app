@@ -1,0 +1,108 @@
+#profile_body {
+    display: flex;
+    justify-content: center;
+}
+
+#profile {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    padding: 80px;
+}
+
+#profile_information {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile_buttons {
+    display: flex;
+    width: 100%;
+}
+
+#profile_text {
+    display: flex;
+    width: 100%;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+}
+
+.space_between {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px;
+}
+
+.actual_buttons {
+    border: none;
+    background-color: rgb(224, 224, 224);
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+#profile_name{
+    font-size: 25px;
+}
+
+#profile_img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    object-fit: cover;
+    overflow: hidden;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+}
+
+#add_post {
+    background-color: #82aabd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actual_buttons:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#add_post:hover {
+    background-color: #2F5F76;
+    text-decoration: none;
+}
+
+#gallery {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-auto-rows: 200px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.gallery_images{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 5px;
+
+}
+
+#center{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}

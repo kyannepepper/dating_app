@@ -1,0 +1,242 @@
+.jumbotron {
+    padding: 0.5em 0.6em;
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.2em;
+        .btn {
+            padding: 0.5em;
+        }
+    }
+}
+
+body {
+    background-color: #e8ecf3;
+    margin:0px;
+}
+
+/* debugging centerline  */
+.center-line {
+    position: fixed;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: rebeccapurple;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+.mainContainer {
+    padding: 0;
+    height: 100vh
+}
+
+
+
+
+
+
+/* GENERAL */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1.5rem;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .col-lg-8 {
+    flex: 0 0 66.6667%;
+    max-width: 66.6667%;
+  }
+  
+  .col-lg-4 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+  
+  /* CARD STYLING */
+  .card {
+    background: #ffffff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-subtitle {
+    font-size: 0.875rem;
+    color: #888;
+  }
+  
+  /* POST FORM */
+  textarea.form-control,
+  input.form-control {
+    border-radius: 6px;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  
+  textarea.form-control {
+    resize: vertical;
+  }
+  
+  /* Align "Add Photo" + "Submit" in same row */
+  .upload-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    align-items: center;
+  }
+  
+  /* Custom File Upload */
+  input[type="file"] {
+    display: none;
+  }
+  
+  .file-upload-label {
+    margin: 0;
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    background-color: #e8f0fe;
+    color: #1967d2;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 0.95rem;
+  }
+  
+  .file-upload-label:hover {
+    background-color: #d2e3fc;
+  }
+  
+  /* Buttons */
+  .btn {
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-primary {
+    background-color: #207153; /* match your header green */
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1a5c43;
+  }
+  
+  /* IQ Badge */
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+  }
+  
+  /* Post Images */
+  img.img-fluid {
+    border-radius: 6px;
+    max-height: 300px;
+    object-fit: cover;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  /* Comments Section */
+  .comments-container {
+    margin-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+  }
+  
+  .comments-container h6 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .comments-container ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+  
+  .comments-container li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #ddd;
+  }
+  
+  .comments-container li strong {
+    color: #444;
+  }
+  
+  .comments-container p {
+    color: #999;
+  }
+  
+  /* Comment Input */
+  .input-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+    margin-top: 0.5rem;
+  }
+  
+  .input-group input[type="text"] {
+    flex: 1;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+  
+  .input-group .btn-outline-primary {
+    background-color: #e8f0fe;
+    color: #1967d2;
+    border: 1px solid #c6dafc;
+  }
+  
+  .input-group .btn-outline-primary:hover {
+    background-color: #c6dafc;
+    color: #0e4aa3;
+  }
+  
+  /* Reaction Buttons */
+  .btn-link {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    color: #207153;
+  }
+  

@@ -1,0 +1,123 @@
+#title { 
+    color:white;
+}
+
+nav {
+    background-color: #2f6076;
+}
+
+body {
+    background-color: white;
+}
+
+p {
+    color: #c3c3c3
+}
+.login {
+    height:min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginH1 {
+    color: #308A6F;
+    opacity: 100;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.logInButton {
+    padding: .35em;
+    width: 24em;
+    border: none;
+    background-color: #308A6F;
+    color: white;
+    border: 2px solid #308A6F;
+    border-radius: 5px;
+}
+
+.loginInputs {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    color: #308A6F;
+    width: 100%;
+}
+
+#signInImg {
+    top: 20%;
+    position: fixed;
+    left:50%;
+    width: 0px; 
+}
+
+.signinInput {
+    width: 24em;
+    border: 2px solid #308A6F;
+    border-radius: 5px;
+    padding: .7em;
+    margin-bottom: .7em;
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: #4b8aa3;
+}
+
+#submitLogin {
+    width: 24em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#buttonSlider {
+    width: 24em;
+    height: 39.5px;
+    background-color:  #308A6F;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliderButtonActive {
+    width: 49%;
+    height: 80%;
+    border: none;
+    background-color: #73bba6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sliderButtonInactive {
+    width: 49%;
+    height: 80%;
+    background-color: rgba(0, 0, 255, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#ImCreatingAnAccount {
+    display: none;
+}
+
+.passwordToggleContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+  
+.passwordToggleIcon {
+    position: absolute;
+    top: .8em;
+    right: 15px;
+    height: 1.9em;
+    cursor: pointer;
+    filter: invert(70%) sepia(20%) saturate(1053%) hue-rotate(160deg) brightness(95%) contrast(85%);
+}
+
+.passwordToggleIcon.password-closed {
+    filter: invert(23%) sepia(48%) saturate(1053%) hue-rotate(160deg) brightness(95%) contrast(85%);
+}

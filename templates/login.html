@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block head %} {{ super() }}
+<script
+  src="{{url_for('static', filename='login/login.js') }}"
+  defer
+  ></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login/login.css') }}" type="text/css" />
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div id="signInImg">
+    <div class="login">
+      <h1 id="loginH1">LOGIN</h1>
+        <div id="buttonSlider">
+          <button id="loginButton" class="sliderButtonActive">LOGIN</button>
+          <button id="signinButton" class="sliderButtonInactive">SIGNUP</button>
+        </div>
+        <form method="post" action="/login">
+          <fieldset class="login">
+            <div id="ImLoggingIn" class="loginInputs"> 
+              <input type="text" name="username" class="signinInput" placeholder="Username" id="username">
+              <div class="passwordToggleContainer">
+                <input id="password_input" name="password" class="signinInput" placeholder="Password" type="password">
+                <img class="passwordToggleIcon" src="{{ url_for('static', filename='login/images/eye_closed.svg') }}" class="passwordToggleIcon">
+              </div>              
+              <input class="logInButton" type="submit" name="type" value="Login"/>
+            </div>
+
+            <div id="ImCreatingAnAccount"  class="loginInputs">
+              <input class="signinInput" name="new_first_name" placeholder="First Name" type="text" id="new_first_name">
+              <input class="signinInput" name="new_last_name" placeholder="Last Name" type="text" id="new_last_name">
+              <input class="signinInput" name="new_iq" placeholder="Your IQ" type="text" id="new_iq">
+              <input id="new_username" name="new_username" class="signinInput" placeholder="Username" type="text" >
+              <div class="passwordToggleContainer">
+                <input id="new_password" name="new_password" class="signinInput" placeholder="Password" type="password">
+                <img class="passwordToggleIcon" src="{{ url_for('static', filename='login/images/eye_closed.svg') }}" class="passwordToggleIcon">
+              </div>  
+              <input class="logInButton" type="submit" name="type" value="Create Account" />          
+            </div>
+
+            <p>Forgot password?</p> 
+          </fieldset>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block head %} {{ super() }}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='profile/css/profile.css') }}"
+  type="text/css"
+/>
+<script src="{{ url_for('static', filename='profile/js/profile.js')}}"></script>
+{% endblock %} {% block content %}
+
+<div id="profile_body">
+  <div id="profile">
+    <div id="profile_information">
+      <div id="profile_img">{{ first_name[0] }}</div>
+      <div>
+        <div class="space_between" id="profile_buttons">
+          <h1 id="profile_name">{{ first_name }} {{ last_name }}</h1>
+          <a class="actual_buttons" href="/games">use points</a>
+          <button class="actual_buttons">edit profile</button>
+        </div>
+        <div class="space_between" id="profile_text">
+          <h4>{{ my_posts|length }} posts</h4>
+          <h4>{{ friends|length }} friends</h4>
+          <h4>{{points}} points</h4>
+          <h4>IQ: {{iq}}</h4>
+        </div>
+      </div>
+    </div>
+    <div id="center">
+      <div id="gallery">
+        {% if my_posts %} {% for post in my_posts %} {% if post.image %}
+        <img
+          class="gallery_images"
+          src="{{ url_for('static', filename=post.image) }}"
+          alt="Post Image"
+        />
+        {% else %}
+        <p>{{ post.text }}</p>
+        {% endif %} {% endfor %} {% else %}
+        <p>No posts yet.</p>
+        {% endif %}
+        <a id="add_post" href="/">+</a>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

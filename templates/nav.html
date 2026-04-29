@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='nav/nav.css') }}" />
+{% block nav %}
+<nav>
+  <div class="container">
+    <div class="home-button">
+      <a href="/"
+        ><img
+          src="{{ url_for('static', filename='res/logo.png') }}"
+          style="width: 45px"
+      /></a>
+      <a id="title" href="/">{{ title }}</a>
+    </div>
+    {% if user %}
+    <div class="center-buttons">
+      <a href="/games">games</a>
+      <a href="/feed">feed</a>
+      <!-- <a href="/friends">friends</a> -->
+      <a href="/profile">profile</a>
+    </div>
+    <div id="balance">Balance: {{ user.points }}</div>
+    <button class="hamburger" onclick="toggleMenu()">≡</button>
+    <ul id="nav-menu">
+      <li><a class="form-control" href="/settings">Settings</a></li>
+      <li><hr class="hr" /></li>
+      <li>
+        <form method="post" action="/logout">
+          <button type="submit" class="form-control" name="logout">
+            Logout
+          </button>
+        </form>
+      </li>
+    </ul>
+    <a href="/profile" id="nav_profile_img">{{ user.first_name[0] }}</a>
+    {% endif %}
+  </div>
+</nav>
+<script src="{{ url_for('static', filename='nav/nav.js') }}" defer></script>
+{% endblock %}

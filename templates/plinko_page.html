@@ -1,0 +1,116 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- Modal Popup for Plinko Rules & Tips -->
+<div id="plinkoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Plinko Rules & Tips</h2>
+    <p>Welcome to Plinko! Here is how to play:</p>
+    <ul>
+      <li>Click the "Drop" button to release the ball.</li>
+      <li>The ball bounces off pegs and lands in scoring slots.</li>
+      <li>Each slot awards different points based on where the ball lands.</li>
+      <li>
+        All points are rounded down to the nearest integer before being awarded.
+      </li>
+      <li>
+        You can change how many balls drop at once by clicking the multiplier in
+        the top right.
+      </li>
+      <li>To have the balls drop automatically, click the auto-drop button.</li>
+      <li>***This game is 100% luck.***</li>
+    </ul>
+    <p>Good luck!</p>
+  </div>
+</div>
+
+<div id="betModal" class="modal closed">
+  <div class="modal-content">
+    <h1>Bet</h1>
+    <p>Place your bet</p>
+    <p>
+      All points are rounded down to the nearest integer before being awarded.
+    </p>
+    <input
+      type="number"
+      id="betInput"
+      min="1"
+      max="{{ user.points }}"
+      value="1"
+    />
+    <button id="placeBetButton">Place Bet</button>
+  </div>
+</div>
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='games/css/plinko.css') }}"
+  type="text/css"
+/>
+
+<div id="balls" class="hidden"></div>
+
+<div class="controls">
+  <div></div>
+  <div>
+    <div id="bet-display">Bet: 0</div>
+  </div>
+  <div class="drop-container">
+    <div class="drop">
+      <button id="drop-button" type="button">Drop</button>
+      <input id="checkbox" type="checkbox" />
+      <label for="checkbox">
+        <div class="box">
+          <svg
+            class="checked"
+            xmlns="http://www.w3.org/2000/svg"
+            width="8px"
+            height="8px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="#ffffff"
+              d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+            />
+          </svg>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div>
+    <div id="multiplier">1</div>
+  </div>
+  <div></div>
+</div>
+<div class="canvas-container">
+  <canvas id="canvas"></canvas>
+</div>
+<div class="notes">
+  <div type="button" class="note" id="note-0">18</div>
+  <div type="button" class="note" id="note-1">9</div>
+  <div type="button" class="note" id="note-2">5</div>
+  <div type="button" class="note" id="note-3">3</div>
+  <div type="button" class="note" id="note-4">1</div>
+  <div type="button" class="note" id="note-5">1</div>
+  <div type="button" class="note" id="note-6">0</div>
+  <div type="button" class="note" id="note-7">0</div>
+  <div type="button" class="note" id="note-8">0</div>
+  <div type="button" class="note" id="note-9">0</div>
+  <div type="button" class="note" id="note-10">0</div>
+  <div type="button" class="note" id="note-11">0</div>
+  <div type="button" class="note" id="note-12">0</div>
+  <div type="button" class="note" id="note-13">1</div>
+  <div type="button" class="note" id="note-14">1</div>
+  <div type="button" class="note" id="note-15">3</div>
+  <div type="button" class="note" id="note-16">5</div>
+  <div type="button" class="note" id="note-17">9</div>
+  <div type="button" class="note" id="note-18">18</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+<script
+  src="{{ url_for('static', filename='games/js/plinko.js') }}"
+  defer
+></script>
+{% endblock %}

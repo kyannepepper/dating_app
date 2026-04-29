@@ -1,0 +1,74 @@
+/* Overall background for the games section */
+body {
+  background: url("/static/images/gamblingBackground.jpg")
+              no-repeat center center fixed !important;
+  background-size: cover !important;
+}
+
+/* Main container adjustments for the games page */
+.container.games-home {
+  padding: 2rem;
+}
+
+/* Title styling */
+.container.games-home h2 {
+  color: #d2dbe3; /* dark gray */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.container.games-home h3 {
+  color: #d2dbe3; /* dark gray */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Paragraph styling */
+.container.games-home p {
+  color: #d2dbe3;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Grid container for game links */
+.grid-game-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* Game card style */
+.game-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Force square image with cover-fit */
+.game-card img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Hover effect for game cards */
+.game-card:hover {
+  transform: scale(1.03);
+}
+
+/* Leaderboard placeholder styling */
+.leaderboard {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid #dee2e6;
+  text-align: center;
+}
+
+.leaderboard h3 {
+  margin-bottom: 0.5rem;
+  color: #d2dbe3;
+}

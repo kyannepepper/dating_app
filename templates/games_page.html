@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='games/css/games.css') }}"
+  type="text/css"
+/>
+
+<div class="container games-home mx-auto py-8">
+  <h2 class="text-2xl font-bold mb-4">Games Section</h2>
+  <p class="mb-6">
+    Welcome to the games section. In this area you can explore various games and
+    access the leaderboard once it is available.
+  </p>
+
+  <!-- 2-column grid for game links -->
+  <div class="grid grid-cols-3 gap-4">
+    <!-- Example game link: blackjack -->
+    <a href="/blackjack" class="block">
+      <img
+        src="{{ url_for('static', filename='games/images/blackjack.png') }}"
+        alt="Blackjack"
+        class="w-full aspect-square object-cover"
+      />
+    </a>
+    <!-- Example game link: roulette -->
+    <a href="/roulette" class="block">
+      <img
+        src="{{ url_for('static', filename='games/images/roulette.png') }}"
+        alt="Roulette"
+        class="w-full aspect-square object-cover"
+      />
+    </a>
+    <!-- Example game link: plinko -->
+    <a href="/plinko" class="block">
+      <img
+        src="{{ url_for('static', filename='games/images/plinko.jpeg') }}"
+        alt="Plinko"
+        class="w-full aspect-square object-cover"
+      />
+    </a>
+    <!-- Add more game links as needed -->
+  </div>
+
+  <!-- Leaderboard placeholder -->
+  <div class="mt-8">
+    <h3 class="text-xl font-semibold">Leaderboard</h3>
+    <p>The leaderboard system will be implemented here soon.</p>
+  </div>
+</div>
+{% endblock %}

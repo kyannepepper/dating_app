@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block head %} {{ super() }}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='coming_soon/css/soon.css') }}" type="text/css" />
+
+{% endblock %}
+{% block content %}
+    <div class="coming-soon">
+        Coming Soon
+    </div>
+{% endblock %}

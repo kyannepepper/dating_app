@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='settings/settings.css') }}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<div class="color-form-container">
+  <!-- Set Font Color -->
+  <form action="/colors/setbody" method="POST">
+    <fieldset class="color-form">
+      <div class="form-group">
+        <label for="font_color" class="form-label">Choose Font Color</label>
+        <select name="color" id="font_color" class="form-select">
+          {% for c in colors %}
+            <option value="{{ c }}">{{ c }}</option>
+          {% endfor %}
+        </select>
+        <input type="hidden" name="type" value="font_color">
+        <input type="submit" class="form-button" value="Set Font Color">
+      </div>
+    </fieldset>
+  </form>
+
+  <!-- Set Body Color -->
+  <form action="/colors/setbody" method="POST">
+    <fieldset class="color-form">
+      <div class="form-group">
+        <label for="body_color" class="form-label">Choose Body Background</label>
+        <select name="color" id="body_color" class="form-select">
+          {% for c in colors %}
+            <option value="{{ c }}">{{ c }}</option>
+          {% endfor %}
+        </select>
+        <input type="hidden" name="type" value="body_color">
+        <input type="submit" class="form-button" value="Set Body Color">
+      </div>
+    </fieldset>
+  </form>
+
+  <!-- Set Nav Color -->
+  <form action="/colors/setnav" method="POST">
+    <fieldset class="color-form">
+      <div class="form-group">
+        <label for="nav_color" class="form-label">Choose Nav Text Color</label>
+        <select name="color" id="nav_color" class="form-select">
+          {% for c in colors %}
+            <option value="{{ c }}">{{ c }}</option>
+          {% endfor %}
+        </select>
+        <input type="hidden" name="type" value="nav_color">
+        <input type="submit" class="form-button" value="Set Navigation Font Color">
+      </div>
+    </fieldset>
+  </form>
+
+  <!-- Set Nav Body Color -->
+  <form action="/colors/setnav" method="POST">
+    <fieldset class="color-form">
+      <div class="form-group">
+        <label for="nav_body_color" class="form-label">Choose Nav Background</label>
+        <select name="color" id="nav_body_color" class="form-select">
+          {% for c in colors %}
+            <option value="{{ c }}">{{ c }}</option>
+          {% endfor %}
+        </select>
+        <input type="hidden" name="type" value="nav_body_color">
+        <input type="submit" class="form-button" value="Set Navigation Body Color">
+      </div>
+    </fieldset>
+  </form>
+
+    <!-- Add New Color -->
+  <!-- mainly for debugging -->
+  <form action="/colors/add" method="POST">
+    <fieldset class="color-form">
+      <div class="form-group">
+        <label class="form-label">Add a New Color</label>
+        <input type="text" name="color" class="form-input" placeholder="Enter new color">
+        <input type="submit" class="form-button" value="Add Color">
+      </div>
+    </fieldset>
+  </form>
+
+</div>
+{% endblock %}
