@@ -12,12 +12,6 @@ Feed view (posts, comments, reactions, and friends sidebar):
 
 ![YouFace feed showing new post form, feed post with image, and friends panel](docs/feed-screenshot.png)
 
-### Turtle Typers (games landing example)
-
-Example games-area branding: a simple landing with title, “scan me” QR code, and entry field—useful as inspiration when customizing `/games` or adding a mobile join flow.
-
-![Turtle Typers landing page with QR code and input bar](docs/turtle-typers-screenshot.png)
-
 ## Getting Started
 
 ### Installing Requirements
@@ -45,8 +39,7 @@ Press `CTRL+C` to stop the server
 ```
 .
 ├── docs
-│   ├── feed-screenshot.png
-│   └── turtle-typers-screenshot.png
+│   └── feed-screenshot.png
 ├── db
 │   ├── posts.py
 │   └── users.py
