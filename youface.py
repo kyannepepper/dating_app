@@ -98,4 +98,5 @@ app.register_blueprint(helpers.blueprint)
 app.secret_key = 'mygroup'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-app.run(debug=True, host='0.0.0.0')
+port = int(os.environ.get('PORT', '5001'))
+app.run(debug=True, host='0.0.0.0', port=port)

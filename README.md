@@ -1,18 +1,16 @@
-# YouFace README
+# YouFace
 
-YouFace is a mock social media platform. Originally designed as an assignment
-for CS 1410, it has been simplified and modernized for CS 2450. This repository
-houses a rough implementation of the completed version of the original
-assignment, yet still provides only minimal functionality. Your group will take
-this social media baseline and make it your own. Consider yourselves a small
-startup with a new and unique take on the social media market.
+## Overview
 
-This README is far from comprehensive. The entire project will provide you an
-opportunity to have the experience of jumping into an existing code base, having
-to learn about it as you go (lack of documentation and disorganized layouts are
-commonplace in the industry). With that in mind, I still want to help as much as
-I can. As you go about working on the project, please let me know of any
-specific areas where I could improve the documentation.
+YouFace is a Flask web app that implements a lightweight social feed: users sign in, publish posts (text and photos), react with likes and dislikes, comment on posts, and add friends by username. The interface includes personalized themes, a points balance, profile IQ on posts, and navigation for feed, profile, and games—similar to a small social or “dating app” style product.
+
+The codebase started as a course baseline (CS 1410 → CS 2450): it is intentionally minimal so groups can extend branding, features, and data models. Working in this repo is practice reading an existing stack (Flask, Jinja, TinyDB) without exhaustive docs—common in real projects. If something is unclear, ask and we can improve the documentation in targeted spots.
+
+## Screenshot
+
+Feed view (posts, comments, reactions, and friends sidebar):
+
+![YouFace feed showing new post form, feed post with image, and friends panel](docs/feed-screenshot.png)
 
 ## Getting Started
 
@@ -30,7 +28,7 @@ with the following command:
 
 `python3 youface.py`
 
-By default, the server can be accessed at `http://127.0.0.1:5000`
+By default the app listens on port **5001** (port 5000 is often used by macOS AirPlay). Open `http://127.0.0.1:5001`. To use another port, set the `PORT` environment variable (for example `PORT=8080 python3 youface.py`).
 
 Press `CTRL+C` to stop the server
 
@@ -40,6 +38,8 @@ Press `CTRL+C` to stop the server
 
 ```
 .
+├── docs
+│   └── feed-screenshot.png
 ├── db
 │   ├── posts.py
 │   └── users.py

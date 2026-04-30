@@ -1,0 +1,42 @@
+{
+    "posts": {
+        "1": {
+            "comments": [
+                {
+                    "text": "That's so cool!",
+                    "time": 1777518060.249108,
+                    "user": "KyanneMyler"
+                }
+            ],
+            "dislikes": 0,
+            "id": 1,
+            "image": "uploads/8220HXLTILT-aluma-trailer-orange-32-ford-coupe-3342.jpg",
+            "iq": "89",
+            "likes": 1,
+            "text": "I got a new trailer",
+            "time": 1777518048.883967,
+            "user": "KyanneMyler"
+        }
+    },
+    "users": {
+        "1": {
+            "body_color": "#fefefe",
+            "colors": [
+                "#fefefe",
+                "#000000",
+                "#fefefe",
+                "#2f6076"
+            ],
+            "first_name": "Kyanne",
+            "font_color": "#000000",
+            "friends": [],
+            "iq": "89",
+            "last_name": "Myler",
+            "nav_body_color": "#2f6076",
+            "nav_color": "#fefefe",
+            "password": "8cbbcf29d9cef89675c5f5c1dcfe827d0570416a5aaba30dd0de159661ad905b",
+            "points": 100,
+            "username": "KyanneMyler"
+        }
+    }
+}
